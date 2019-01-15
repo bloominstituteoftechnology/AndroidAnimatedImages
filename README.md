@@ -5,6 +5,8 @@ For this project, you'll be creating a 3 page app. This can be done with 3 separ
 ## Goals
 A page in your app with one of each of these types of image playing its animation
 
+As yesterday's lecture went late only part 3 of this assignment will be required. However, if you have finished yesterday's assignment already, complete the other 2 parts.
+
 1. An animated Gif (find a fun one online)
 2. A animated drawable (find a gif and use a site like [this](https://ezgif.com/split), to split up and download the frames)
 3. A button animated with an animated vector drawable that animates between two states when pressed (you'll need a button with 2 states and 2 animations, one for A to B and one for B to A)
@@ -12,4 +14,8 @@ A page in your app with one of each of these types of image playing its animatio
 
 ## Test
 
-1. Make sure that you can switch between pages and that each animation playes
+1. Make sure that you can switch between pages and that each animation plays
+
+## Go further
+
+Explore the demo animations in Shapeshifter and try and figure out how the more complicated animations are built.
