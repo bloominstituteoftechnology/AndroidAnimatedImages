@@ -1,6 +1,7 @@
 package com.example.animations;
 
 import android.graphics.ImageDecoder;
+import android.graphics.drawable.Animatable;
 import android.graphics.drawable.AnimatedImageDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
@@ -30,7 +31,10 @@ public class MainActivity extends AppCompatActivity {
                             imageView.setImageDrawable(drawable1);
                         }
                     });
-                    ((AnimatedImageDrawable)drawable1).start();
+                    if (drawable1 instanceof Animatable){
+                        ((AnimatedImageDrawable)drawable1).start();
+
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
