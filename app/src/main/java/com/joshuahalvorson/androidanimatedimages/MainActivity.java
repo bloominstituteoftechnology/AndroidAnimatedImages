@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.tab_layout);
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-        //viewPagerAdapter.addFragment();
+        viewPagerAdapter.addFragment(new AnimatedGifFragment(), "GIF");
         //viewPagerAdapter.addFragment();
         //viewPagerAdapter.addFragment();
 
