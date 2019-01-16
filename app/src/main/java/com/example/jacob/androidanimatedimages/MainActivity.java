@@ -92,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
             drawables.add(getDrawable(R.color.colorAccent));
         }
 
-//        drawables.add(getDrawable(R.drawable.rotating_earth));
     }
 
 
