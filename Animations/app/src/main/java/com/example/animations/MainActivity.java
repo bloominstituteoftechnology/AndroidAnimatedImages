@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         final ImageView imageView = findViewById(R.id.animated_image_view);
 
-        new Thread(new Runnable() {
+        /*new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
@@ -39,6 +39,14 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-        }).start();
+        }).start();*/
+
+        imageView.setImageDrawable(getDrawable(R.drawable.animation_playground));
+        final Drawable drawable = imageView.getDrawable();
+        if (drawable instanceof Animatable){
+            ((Animatable)drawable).start();
+        }
     }
+
+
 }
