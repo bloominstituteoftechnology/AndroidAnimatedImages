@@ -1,11 +1,12 @@
 package com.example.jacob.androidanimatedimages;
 
 import android.graphics.ImageDecoder;
+import android.graphics.drawable.Animatable;
+import android.graphics.drawable.AnimatedImageDrawable;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -25,6 +26,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String PLAYING_FLAG = "playing_flag";
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -38,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * The {@link ViewPager} that will host the section contents.
      */
-    private ViewPager mViewPager;
+    private static ViewPager mViewPager;
+    private static boolean playing = false;
 
     private static ArrayList<Drawable> drawables = new ArrayList<>();
 
@@ -59,21 +62,29 @@ public class MainActivity extends AppCompatActivity {
 
 
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setImageDrawable(getDrawable(R.drawable.avd_anim_stop_to_play));
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                Drawable drawable = getDrawable(R.drawable.rotating_earth_animation);
-                fab.setImageDrawable(drawable);
 
-                if (drawable instanceof AnimationDrawable) {
-                    ((AnimationDrawable)drawable).start();
+                Drawable buttonDrawable;
+                if (playing) {
+                    buttonDrawable = getDrawable(R.drawable.avd_anim_play_to_stop);
+                    playing = false;
+                } else {
+                    buttonDrawable = getDrawable(R.drawable.avd_anim_stop_to_play);
+                    playing = true;
                 }
-
+                fab.setImageDrawable(buttonDrawable);
+                if (buttonDrawable instanceof Animatable) {
+                    ((Animatable) buttonDrawable).start();
+                }
+                mViewPager.performClick();
             }
         });
-
+        drawables.add(getDrawable(R.drawable.rotating_earth_animation));
+        drawables.add(getDrawable(R.drawable.rotating_earth_animation));
         try {
             drawables.add(ImageDecoder.decodeDrawable(ImageDecoder.createSource(getResources(), R.drawable.computer_blowup)));
         } catch (IOException e) {
@@ -82,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
 //        drawables.add(getDrawable(R.drawable.rotating_earth));
-        drawables.add(getDrawable(R.drawable.rotating_earth_animation));
     }
 
 
@@ -137,29 +147,38 @@ public class MainActivity extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             int position = getArguments().getInt(ARG_SECTION_NUMBER);
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            final View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            final ImageView imageView = (ImageView) rootView.findViewById(R.id.animated_image);
+            mViewPager.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Drawable imageViewDrawable = imageView.getDrawable();
+                    if (playing) {
+                        if (imageViewDrawable instanceof AnimatedImageDrawable) {
+                            ((AnimatedImageDrawable) imageView.getDrawable()).stop();
+                        } else if (imageViewDrawable instanceof AnimationDrawable) {
+                            ((AnimationDrawable) imageView.getDrawable()).stop();
+                        }
+                    } else {
+                        if (imageViewDrawable instanceof AnimationDrawable) {
+                            ((AnimationDrawable) imageView.getDrawable()).start();
+                        } else if (imageViewDrawable instanceof AnimatedImageDrawable) {
+                            ((AnimatedImageDrawable) imageView.getDrawable()).start();
+                        }
+                    }
+                }
+            });
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             textView.setText(getString(R.string.section_format, position));
-            ImageView imageView = (ImageView) rootView.findViewById(R.id.animated_image);
             final Drawable drawable = drawables.get(position - 1);
             imageView.setImageDrawable(drawable);
             if (drawable instanceof AnimationDrawable) {
                 ((AnimationDrawable) imageView.getDrawable()).start();
+            } else if (drawable instanceof AnimatedImageDrawable) {
+                ((AnimatedImageDrawable) imageView.getDrawable()).start();
             }
             return rootView;
         }
-
-
-        @Override
-        public void onAttachFragment(Fragment childFragment) {
-            super.onAttachFragment(childFragment);
-            ImageView view = childFragment.getView().findViewById(R.id.animated_image);
-            if (view.getDrawable() instanceof AnimationDrawable) {
-                ((AnimationDrawable) view.getDrawable()).start();
-            }
-        }
-
-
     }
 
     /**
@@ -182,10 +201,10 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 2;
+            //TODO change count to 2 below and get 2nd image to stop and start on 2nd tab.
+            //TODO change count to 3 below and get 3rd image display on 3rd tab.  Possible hardware issue. May work on another computer or phone.
+            return 1;
         }
-
 
     }
 }
