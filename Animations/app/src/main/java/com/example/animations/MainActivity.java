@@ -6,6 +6,7 @@ import android.graphics.drawable.AnimatedImageDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 
 import java.io.IOException;
@@ -41,12 +42,29 @@ public class MainActivity extends AppCompatActivity {
             }
         }).start();*/
 
-        imageView.setImageDrawable(getDrawable(R.drawable.animation_playground));
+        // wolverine animation
+       /* imageView.setImageDrawable(getDrawable(R.drawable.animation_playground));
         final Drawable drawable = imageView.getDrawable();
         if (drawable instanceof Animatable){
             ((Animatable)drawable).start();
+        }*/
+
+       //todo getting a bug
+        imageView.setImageDrawable(getDrawable(R.drawable.headset_mic));
+        final Drawable drawable = (imageView).getDrawable();
+        if (drawable instanceof Animatable) {
+            ((Animatable) drawable).start();
         }
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageView.setImageDrawable(getDrawable(R.drawable.headset_mic));
+                final Drawable drawable = imageView.getDrawable();
+                if (drawable instanceof Animatable) {
+                    ((Animatable) drawable).start();
+                }
+            }
+        });
     }
-
-
 }
