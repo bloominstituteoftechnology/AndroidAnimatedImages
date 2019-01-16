@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         }*/
 
        //todo getting a bug
-        imageView.setImageDrawable(getDrawable(R.drawable.headset_mic));
+        imageView.setImageDrawable(getDrawable(R.drawable.avd_anim));
         final Drawable drawable = (imageView).getDrawable();
         if (drawable instanceof Animatable) {
             ((Animatable) drawable).start();
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageView.setImageDrawable(getDrawable(R.drawable.headset_mic));
+                imageView.setImageDrawable(getDrawable(R.drawable.avd_anim));
                 final Drawable drawable = imageView.getDrawable();
                 if (drawable instanceof Animatable) {
                     ((Animatable) drawable).start();
