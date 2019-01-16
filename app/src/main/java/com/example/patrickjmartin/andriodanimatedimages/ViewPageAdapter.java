@@ -1,5 +1,6 @@
 package com.example.patrickjmartin.andriodanimatedimages;
 
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -14,11 +15,11 @@ public class ViewPageAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int i) {
         switch (i) {
             case 0:
-                return AnimatedGIF.newInstance(0, "Page # 1");
-            case 1: // Fragment # 0 - This will show FirstFragment different title
-                return FirstFragment.newInstance(1, "Page # 2");
-            case 2: // Fragment # 1 - This will show SecondFragment
-                return SecondFragment.newInstance(2, "Page # 3");
+                return AnimatedGIF.newInstance();
+            case 1:
+                return AnimatedDrawable.newInstance();
+            case 2:
+                return AnimatedButton.newInstance();
             default:
                 return null;
         }
@@ -28,12 +29,26 @@ public class ViewPageAdapter extends FragmentPagerAdapter {
         super(fragmentManager);
     }
 
-    public void addFragment(String key, Fragment value) {
-        fragments.put(key, value);
-    }
 
     @Override
     public int getCount() {
         return NUM_ITEMS;
+    }
+
+    @Nullable
+    @Override
+    public CharSequence getPageTitle(int position) {
+
+        switch (position) {
+            case 0:
+                return "Animated Gif";
+            case 1:
+                return "Animated Drawable List";
+            case 2:
+                return "Animated Vector Drawable";
+            default:
+                return null;
+
+        }
     }
 }

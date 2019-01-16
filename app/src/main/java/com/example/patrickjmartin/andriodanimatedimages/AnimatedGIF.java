@@ -1,38 +1,41 @@
 package com.example.patrickjmartin.andriodanimatedimages;
 
 import android.content.Context;
+import android.graphics.ImageDecoder;
+import android.graphics.drawable.AnimatedImageDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import java.io.IOException;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link AnimatedGIF.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link AnimatedGIF#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class AnimatedGIF extends Fragment {
 
     private ImageView gifImageView;
+    private static String title = "Animated Gif";
 
     public AnimatedGIF() {
         // Required empty public constructor
     }
 
+
+    public static AnimatedGIF newInstance() {
+        AnimatedGIF fragment = new AnimatedGIF();
+        return fragment;
+    }
+
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
@@ -42,42 +45,40 @@ public class AnimatedGIF extends Fragment {
         return inflater.inflate(R.layout.fragment_animated_gi, container, false);
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        gifImageView = view.findViewById(R.id.animated_gif_imageView);
     }
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    final Drawable drawable = ImageDecoder.
+                            decodeDrawable(ImageDecoder.createSource(getResources(), R.drawable.fakerealcat));
+
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            gifImageView.setImageDrawable(drawable);
+                        }
+                    });
+                    if(drawable instanceof AnimatedImageDrawable) {
+                        ((AnimatedImageDrawable) drawable).start();
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-    }
+
+
 }

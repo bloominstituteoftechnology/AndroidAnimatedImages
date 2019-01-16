@@ -7,7 +7,7 @@
     tools:context=".AnimatedDrawable">
 
     <ImageView
-        android:id="@+id/animate_drawable_imageview"
+        android:id="@+id/animated_drawable_imageview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
