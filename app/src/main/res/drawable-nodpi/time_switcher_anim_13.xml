@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+	android:drawable="@drawable/time_switcher_vec_now" >
+	<target
+		android:name="leftHand"
+		android:animation="@anim/ts_left_hand_rot_right" />
+	<target
+		android:name="rightHand"
+		android:animation="@anim/ts_right_hand_rot_right" />
+	<target
+		android:name="hidingPie"
+		android:animation="@anim/ts_hiding_pie_right" />
+	<target
+		android:name="hidingPiePath"
+		android:animation="@anim/ts_hiding_pie_alpha" />
+	<target
+		android:name="now"
+		android:animation="@anim/ts_delayed_disappearance" />
+	<target
+		android:name="moon"
+		android:animation="@anim/ts_delayed_appearance" />
+</animated-vector>
