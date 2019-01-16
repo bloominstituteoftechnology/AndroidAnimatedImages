@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item android:drawable="@drawable/wolverine000" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine001" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine002" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine003" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine004" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine005" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine006" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine007" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine008" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine009" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine010" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine011" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine012" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine013" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine014" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine015" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine016" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine017" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine018" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine019" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine020" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine021" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine022" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine023" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine024" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine025" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine026" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine027" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine028" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine029" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine030" android:duration="35"/>
+    <item android:drawable="@drawable/wolverine031" android:duration="35"/>
+
+</animation-list>
