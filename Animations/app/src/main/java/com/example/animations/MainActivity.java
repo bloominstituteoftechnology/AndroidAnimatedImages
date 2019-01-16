@@ -49,13 +49,7 @@ public class MainActivity extends AppCompatActivity {
             ((Animatable)drawable).start();
         }*/
 
-       //todo getting a bug
-        imageView.setImageDrawable(getDrawable(R.drawable.avd_anim));
-        final Drawable drawable = (imageView).getDrawable();
-        if (drawable instanceof Animatable) {
-            ((Animatable) drawable).start();
-        }
-
+      imageView.setImageDrawable(getDrawable(R.drawable.avd_anim));
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
