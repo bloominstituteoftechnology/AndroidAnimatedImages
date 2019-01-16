@@ -1,23 +1,27 @@
 package com.example.jacob.androidanimatedimages;
 
+import android.graphics.ImageDecoder;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private ViewPager mViewPager;
 
+    private static ArrayList<Drawable> drawables = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,17 +57,32 @@ public class MainActivity extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
-        final ImageView imageView = findViewById(R.id.animated_image);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                Drawable drawable = getDrawable(R.drawable.rotating_earth_animation);
+                fab.setImageDrawable(drawable);
+
+                if (drawable instanceof AnimationDrawable) {
+                    ((AnimationDrawable)drawable).start();
+                }
+
             }
         });
 
+        try {
+            drawables.add(ImageDecoder.decodeDrawable(ImageDecoder.createSource(getResources(), R.drawable.computer_blowup)));
+        } catch (IOException e) {
+            e.printStackTrace();
+            drawables.add(getDrawable(R.color.colorAccent));
+        }
+
+//        drawables.add(getDrawable(R.drawable.rotating_earth));
+        drawables.add(getDrawable(R.drawable.rotating_earth_animation));
     }
 
 
@@ -115,11 +136,30 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
+            int position = getArguments().getInt(ARG_SECTION_NUMBER);
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            textView.setText(getString(R.string.section_format, position));
+            ImageView imageView = (ImageView) rootView.findViewById(R.id.animated_image);
+            final Drawable drawable = drawables.get(position - 1);
+            imageView.setImageDrawable(drawable);
+            if (drawable instanceof AnimationDrawable) {
+                ((AnimationDrawable) imageView.getDrawable()).start();
+            }
             return rootView;
         }
+
+
+        @Override
+        public void onAttachFragment(Fragment childFragment) {
+            super.onAttachFragment(childFragment);
+            ImageView view = childFragment.getView().findViewById(R.id.animated_image);
+            if (view.getDrawable() instanceof AnimationDrawable) {
+                ((AnimationDrawable) view.getDrawable()).start();
+            }
+        }
+
+
     }
 
     /**
@@ -139,10 +179,13 @@ public class MainActivity extends AppCompatActivity {
             return PlaceholderFragment.newInstance(position + 1);
         }
 
+
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 2;
         }
+
+
     }
 }
