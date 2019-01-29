@@ -11,7 +11,7 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
     private ImageView animatedButton;
-    private Button nextActivity;
+    private Button nextActivity, gifActivity;
     private boolean isClicked = true;
 
     @Override
@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         animatedButton = findViewById(R.id.image_button);
         nextActivity = findViewById(R.id.button);
+        gifActivity = findViewById(R.id.button2);
 
 
         animatedButton.setImageDrawable(getDrawable(R.drawable.switch_vector_1));
@@ -27,11 +28,18 @@ public class MainActivity extends AppCompatActivity {
         if (drawable instanceof Animatable) {
             ((Animatable) drawable).start();
         }
-        
+
         nextActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),ListVector.class);
+                startActivity(i);
+            }
+        });
+        gifActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),GifActivity.class);
                 startActivity(i);
             }
         });
