@@ -16,18 +16,21 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
+            android:id="@+id/button_gif"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="GIF" />
 
         <RadioButton
+            android:id="@+id/button_animation"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Animation" />
 
         <RadioButton
+            android:id="@+id/button_vector"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
