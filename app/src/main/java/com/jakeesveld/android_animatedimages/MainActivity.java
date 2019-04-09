@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     RadioButton buttonVector;
     ConstraintLayout parentLayout;
     Boolean pickup;
+    ImageView imageViewBubble;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +31,14 @@ public class MainActivity extends AppCompatActivity {
         buttonGif = findViewById(R.id.button_gif);
         buttonVector = findViewById(R.id.button_vector);
         parentLayout = findViewById(R.id.parent_layout);
+        imageViewBubble = findViewById(R.id.image_view_bubble);
+        imageViewBubble.setVisibility(View.GONE);
 
         imageView.setImageDrawable(getDrawable(R.drawable.snoop_dogg));
         parentLayout.setBackground(getDrawable(R.drawable.compton_background));
         buttonGif.setChecked(true);
         refreshAnimation();
-        pickup = false;
+        pickup = true;
 
         buttonGif.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 buttonGif.setChecked(false);
                 buttonVector.setChecked(true);
                 buttonAnimation.setChecked(false);
-                imageView.setImageDrawable(getDrawable(R.drawable.avd_anim_ring_pickup));
+                imageView.setImageDrawable(getDrawable(R.drawable.avd_anim_pickup_ring));
                 parentLayout.setBackground(getDrawable(R.drawable.office_background));
                 refreshAnimation();
             }
@@ -91,8 +94,10 @@ public class MainActivity extends AppCompatActivity {
 
                     if(pickup){
                         imageView.setImageDrawable(getDrawable(R.drawable.avd_anim_pickup_ring));
+                        imageViewBubble.setVisibility(View.GONE);
                     }else{
                         imageView.setImageDrawable(getDrawable(R.drawable.avd_anim_ring_pickup));
+                        imageViewBubble.setVisibility(View.VISIBLE);
                     }
                     Drawable current = imageView.getDrawable();
                     ((AnimatedVectorDrawable) current).start();
