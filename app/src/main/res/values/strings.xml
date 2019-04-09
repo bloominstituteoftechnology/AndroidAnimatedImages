@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">AndroidAnimatedImages</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_gif">GIF</string>
+    <string name="title_avd">AVD</string>
+    <string name="title_gif2">GIF</string>
+    <string name="image_view_content_description">animated</string>
 </resources>
