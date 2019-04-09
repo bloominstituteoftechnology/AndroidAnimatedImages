@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Animated Images</string>
     <string name="start_button_text">Animate Image</string>
+    <string-array name="resource_list">
+        <item>Space</item>
+        <item>Gatsby</item>
+    </string-array>
 </resources>
