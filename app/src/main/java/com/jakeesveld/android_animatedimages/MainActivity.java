@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 buttonVector.setChecked(true);
                 buttonAnimation.setChecked(false);
                 imageView.setImageDrawable(getDrawable(R.drawable.avd_anim_ring_pickup));
+                parentLayout.setBackground(getDrawable(R.drawable.office_background));
                 refreshAnimation();
             }
         });
