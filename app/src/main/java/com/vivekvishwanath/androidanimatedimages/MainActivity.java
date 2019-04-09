@@ -37,6 +37,12 @@ public class MainActivity extends AppCompatActivity {
                                 .addToBackStack(null)
                                 .commit();
                         break;
+                    case 2:
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.fragment_container, new CrescentFragment())
+                                .addToBackStack(null)
+                                .commit();
+                        break;
                 }
             }
 
