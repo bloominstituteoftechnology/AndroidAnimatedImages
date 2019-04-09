@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AndroidAnimatedImages</string>
+    <string-array name="gif_list">
+        <item>Monkey</item>
+        <item>Elon Musk</item>
+        <item>Crescent</item>
+    </string-array>
+</resources>
