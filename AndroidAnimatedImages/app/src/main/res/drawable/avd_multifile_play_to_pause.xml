@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/ic_multifile_play">
+
+    <target
+        android:animation="@animator/multifile_play_to_pause_path_data"
+        android:name="play"/>
+
+    <target
+        android:animation="@animator/multifile_play_to_pause_rotation"
+        android:name="play"/>
+
+    <!--name corresponds to name at drawable-->
+
+</animated-vector>

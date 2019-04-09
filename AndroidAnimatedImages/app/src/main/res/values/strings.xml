@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AndroidAnimatedImages</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <array name="array_animation_list">
+
+        <item>Animated gif</item>
+        <item>Animated drawable</item>
+        <item>Animated vector drawable</item>
+
+    </array>
+</resources>
