@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AnimatedImageProject</string>
+    <string-array name="spinner_list">
+        <item>Keanu</item>
+        <item>Cat</item>
+        <item>Super Dog</item>
+    </string-array>
 </resources>
