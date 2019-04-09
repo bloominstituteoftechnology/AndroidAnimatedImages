@@ -72,10 +72,10 @@ public class MainActivity extends AppCompatActivity {
                 buttonGif.setChecked(false);
                 buttonVector.setChecked(true);
                 buttonAnimation.setChecked(false);
-                if(pickup) {
+                if (pickup) {
                     imageView.setImageDrawable(getDrawable(R.drawable.avd_anim_ring_pickup));
                     imageViewBubble.setVisibility(View.VISIBLE);
-                }else{
+                } else {
                     imageView.setImageDrawable(getDrawable(R.drawable.avd_anim_pickup_ring));
                 }
                 parentLayout.setBackground(getDrawable(R.drawable.office_background));
@@ -86,33 +86,34 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void refreshAnimation(){
+    public void refreshAnimation() {
         final Drawable drawable = imageView.getDrawable();
-        if(drawable instanceof AnimatedImageDrawable){
+        if (drawable instanceof AnimatedImageDrawable) {
             ((AnimatedImageDrawable) drawable).start();
-        }else if(drawable instanceof AnimationDrawable){
+        } else if (drawable instanceof AnimationDrawable) {
             ((AnimationDrawable) drawable).start();
-        }else if(drawable instanceof AnimatedVectorDrawable){
+        } else if (drawable instanceof AnimatedVectorDrawable) {
             ((AnimatedVectorDrawable) drawable).start();
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-                    if(pickup){
-                        imageView.setImageDrawable(getDrawable(R.drawable.avd_anim_pickup_ring));
-                        imageViewBubble.setVisibility(View.GONE);
-                    }else{
-                        imageView.setImageDrawable(getDrawable(R.drawable.avd_anim_ring_pickup));
-                        imageViewBubble.setVisibility(View.VISIBLE);
+                    if (buttonVector.isChecked()) {
+                        if (pickup) {
+                            imageView.setImageDrawable(getDrawable(R.drawable.avd_anim_pickup_ring));
+                            imageViewBubble.setVisibility(View.GONE);
+                        } else {
+                            imageView.setImageDrawable(getDrawable(R.drawable.avd_anim_ring_pickup));
+                            imageViewBubble.setVisibility(View.VISIBLE);
+                        }
+                        Drawable current = imageView.getDrawable();
+                        ((AnimatedVectorDrawable) current).start();
+                        pickup = !pickup;
                     }
-                    Drawable current = imageView.getDrawable();
-                    ((AnimatedVectorDrawable) current).start();
-                    pickup = !pickup;
                 }
             });
+
         }
     }
-
 
 
 }
