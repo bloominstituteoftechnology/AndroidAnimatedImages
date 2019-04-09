@@ -7,48 +7,62 @@ import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 public class MainActivity extends AppCompatActivity {
     boolean isplaying;
     ImageView playButtonImageView;
     ImageView imageView;
-    RadioButton radioButton;
+    RadioButton radioButtonGoron;
+    RadioButton radioButtonLink;
+    RadioGroup radioGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        radioButton = findViewById(R.id.radio_button);
-
+        radioButtonGoron = findViewById(R.id.radio_button_goron);
+        radioButtonLink = findViewById(R.id.radio_button_link);
+        radioGroup = findViewById(R.id.radio_group);
         imageView = findViewById(R.id.image_view);
-        imageView.setImageDrawable(getDrawable(R.drawable.link));
+        radioButtonLink.setChecked(true); // default radio button checked
+        imageView.setImageDrawable(getDrawable(R.drawable.link)); //default gif loaded
+        isplaying = false; //give default value for toggleable boolean
 
-        radioButton.setOnClickListener(new View.OnClickListener() {
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { //when either radio button is pressed
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                playButtonImageView.setImageDrawable(getDrawable(R.drawable.avd_playtopause));
+                isplaying = false;
+            }
+        });
+
+
+        radioButtonGoron.setOnClickListener(new View.OnClickListener() { //change which gif is loaded
             @Override
             public void onClick(View view) {
-                if (radioButton.isChecked()){
                     imageView.setImageDrawable(getDrawable(R.drawable.goron));
-                } else {
-                    imageView.setImageDrawable(getDrawable(R.drawable.link));
-                }
+            }
+        });
+        radioButtonLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                imageView.setImageDrawable(getDrawable(R.drawable.link));
             }
         });
 
 
 
 
-        isplaying = false;
         playButtonImageView = findViewById(R.id.play_button_image_view);
         playButtonImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Drawable gifDrawable = imageView.getDrawable();
-                if (gifDrawable instanceof AnimatedImageDrawable) {
+                if (gifDrawable instanceof AnimatedImageDrawable) { //handles either AnimatedImageDrawables (New type)
                     if (!isplaying) {
                         playButtonImageView.setImageDrawable(getDrawable(R.drawable.avd_playtopause));
                         Drawable drawable = playButtonImageView.getDrawable();
@@ -61,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                         ((AnimatedImageDrawable) imageView.getDrawable()).stop(); //stop gif
                     }
                 }
-                else if (gifDrawable instanceof AnimationDrawable){
+                else if (gifDrawable instanceof AnimationDrawable){ //or AnimationDrawable (Old type)
                     if (!isplaying) {
                         playButtonImageView.setImageDrawable(getDrawable(R.drawable.avd_playtopause));
                         Drawable drawable = playButtonImageView.getDrawable();

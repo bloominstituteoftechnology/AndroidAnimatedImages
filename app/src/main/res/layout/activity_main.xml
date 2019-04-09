@@ -7,13 +7,28 @@
     android:padding="15dp"
     tools:context=".MainActivity">
 
-    <RadioButton
-        android:id="@+id/radio_button"
+    <RadioGroup
+        android:id="@+id/radio_group"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="change gif"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radio_button_goron"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Goron" />
+
+        <RadioButton
+            android:id="@+id/radio_button_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Link" />
+
+    </RadioGroup>
 
     <ImageView
         android:id="@+id/image_view"
@@ -26,12 +41,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:src="@drawable/avd_playtopause"
         android:id="@+id/play_button_image_view"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/avd_playtopause"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
