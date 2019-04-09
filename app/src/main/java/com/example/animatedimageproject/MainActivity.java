@@ -19,5 +19,7 @@ public class MainActivity extends AppCompatActivity {
         gifSelector = findViewById(R.id.gif_selector);
         playButton = findViewById(R.id.play_gif_button);
         gifView = findViewById(R.id.imageView_gif);
+
+
     }
 }
