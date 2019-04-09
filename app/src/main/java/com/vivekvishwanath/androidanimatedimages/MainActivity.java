@@ -26,7 +26,16 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
-                        fragmentTransaction.replace(R.id.fragment_container, new MonkeyFragment()).commit();
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.fragment_container, new MonkeyFragment())
+                                .addToBackStack(null)
+                                .commit();
+                        break;
+                    case 1:
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.fragment_container, new ElonMuskFragment())
+                                .addToBackStack(null)
+                                .commit();
                         break;
                 }
             }
