@@ -38,11 +38,12 @@ public class MainActivity extends AppCompatActivity {
         parentLayout.setBackground(getDrawable(R.drawable.compton_background));
         buttonGif.setChecked(true);
         refreshAnimation();
-        pickup = true;
+        pickup = false;
 
         buttonGif.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                imageViewBubble.setVisibility(View.GONE);
                 buttonGif.setChecked(true);
                 buttonAnimation.setChecked(false);
                 buttonVector.setChecked(false);
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         buttonAnimation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                imageViewBubble.setVisibility(View.GONE);
                 buttonAnimation.setChecked(true);
                 buttonVector.setChecked(false);
                 buttonGif.setChecked(false);
@@ -70,7 +72,12 @@ public class MainActivity extends AppCompatActivity {
                 buttonGif.setChecked(false);
                 buttonVector.setChecked(true);
                 buttonAnimation.setChecked(false);
-                imageView.setImageDrawable(getDrawable(R.drawable.avd_anim_pickup_ring));
+                if(pickup) {
+                    imageView.setImageDrawable(getDrawable(R.drawable.avd_anim_ring_pickup));
+                    imageViewBubble.setVisibility(View.VISIBLE);
+                }else{
+                    imageView.setImageDrawable(getDrawable(R.drawable.avd_anim_pickup_ring));
+                }
                 parentLayout.setBackground(getDrawable(R.drawable.office_background));
                 refreshAnimation();
             }
@@ -87,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
             ((AnimationDrawable) drawable).start();
         }else if(drawable instanceof AnimatedVectorDrawable){
             ((AnimatedVectorDrawable) drawable).start();
-            pickup = !pickup;
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
