@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 String selectedItem = (String) animationListSpinner.getSelectedItem();
                 String[] animationListStrs = getResources().getStringArray(R.array.array_animation_list);
                 if (selectedItem.equals(animationListStrs[0])) { // animated gif
-                    mainImageView.setImageDrawable(getDrawable(R.drawable.hourglass));
+                    mainImageView.setImageDrawable(getDrawable(R.drawable.cat));
                     mainImageView.setTag(false); // set to stop
                     mainImageView.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                                     mainImageView.setTag(false);
                                 } else {
                                     animatedImageDrawable.start();
-                                    animatedImageDrawable.setRepeatCount(1);
+                                    //animatedImageDrawable.setRepeatCount(1);
                                     mainImageView.setTag(true);
                                 }
                             }
