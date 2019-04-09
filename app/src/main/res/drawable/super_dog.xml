@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/super_dog_00" android:duration="80"/>
+    <item android:drawable="@drawable/super_dog_01" android:duration="80"/>
+    <item android:drawable="@drawable/super_dog_02" android:duration="80"/>
+    <item android:drawable="@drawable/super_dog_03" android:duration="80"/>
+    <item android:drawable="@drawable/super_dog_04" android:duration="80"/>
+    <item android:drawable="@drawable/super_dog_05" android:duration="80"/>
+    <item android:drawable="@drawable/super_dog_06" android:duration="80"/>
+    <item android:drawable="@drawable/super_dog_07" android:duration="80"/>
+    <item android:drawable="@drawable/super_dog_08" android:duration="80"/>
+    <item android:drawable="@drawable/super_dog_09" android:duration="80"/>
+    <item android:drawable="@drawable/super_dog_10" android:duration="80"/>
+    <item android:drawable="@drawable/super_dog_11" android:duration="80"/>
+    <item android:drawable="@drawable/super_dog_12" android:duration="80"/>
+    <item android:drawable="@drawable/super_dog_13" android:duration="80"/>
+    <item android:drawable="@drawable/super_dog_14" android:duration="80"/>
+    <item android:drawable="@drawable/super_dog_15" android:duration="80"/>
+    <item android:drawable="@drawable/super_dog_16" android:duration="80"/>
+    <item android:drawable="@drawable/super_dog_17" android:duration="80"/>
+</animation-list>
