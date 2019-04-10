@@ -29,7 +29,8 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/circle_melts_line" />
+        android:contentDescription="@string/image_view_content_description"
+        android:src="@drawable/circle_melts_line" />
 
     <ImageView
         android:id="@+id/image_view"
@@ -43,7 +44,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_button"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        android:src="@drawable/starblown" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
