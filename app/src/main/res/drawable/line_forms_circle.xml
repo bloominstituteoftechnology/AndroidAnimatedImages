@@ -4,15 +4,15 @@
     <aapt:attr name="android:drawable">
         <vector
             android:name="line_forms_circle"
-            android:width="210dp"
-            android:height="297dp"
-            android:viewportWidth="210"
-            android:viewportHeight="297">
+            android:width="100dp"
+            android:height="100dp"
+            android:viewportWidth="300"
+            android:viewportHeight="300">
             <path
                 android:name="line"
                 android:pathData="M 5.886 261.461 C 206.41 261.461 205.549 260.724 205.549 260.724"
                 android:strokeColor="#0F0"
-                android:strokeWidth="5.269746"
+                android:strokeWidth="10"
                 android:strokeLineCap="round"
                 android:strokeLineJoin="round"/>
         </vector>

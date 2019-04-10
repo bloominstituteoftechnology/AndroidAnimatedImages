@@ -6,15 +6,15 @@
             android:name="circle_melts_line"
             android:width="100dp"
             android:height="100dp"
-            android:viewportWidth="250"
-            android:viewportHeight="250">
+            android:viewportWidth="300"
+            android:viewportHeight="300">
             <path
                 android:name="circle"
                 android:pathData="M 105.833 64.167 C 86.999 64.167 68.639 70.132 53.401 81.203 C 38.164 92.274 26.817 107.891 20.997 125.804 C 15.177 143.717 15.177 163.021 20.997 180.934 C 26.817 198.847 38.164 214.464 53.401 225.535 C 68.639 236.606 86.999 242.571 105.833 242.571 C 124.668 242.571 143.028 236.606 158.265 225.535 C 173.503 214.464 184.85 198.847 190.67 180.934 C 196.49 163.021 196.49 143.717 190.67 125.804 C 184.85 107.891 173.503 92.274 158.265 81.203 C 143.028 70.132 124.668 64.167 105.833 64.167 Z"
                 android:strokeColor="#0F0"
                 android:strokeWidth="10"
                 android:strokeLineCap="round"
-                android:strokeLineJoin="bevel" />
+                android:strokeLineJoin="round" />
         </vector>
     </aapt:attr>
     <target android:name="circle">
