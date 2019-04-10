@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { //when either radio button is pressed
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                playButtonImageView.setImageDrawable(getDrawable(R.drawable.avd_playtopause));
+                playButtonImageView.setImageDrawable(getDrawable(R.drawable.ic_launcher_background));
                 isplaying = false;
                 Log.i("AppLog", "onCheckChanged Triggered");
             }
