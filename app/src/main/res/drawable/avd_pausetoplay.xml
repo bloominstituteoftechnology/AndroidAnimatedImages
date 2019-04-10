@@ -4,6 +4,7 @@
     <aapt:attr name="android:drawable">
         <vector
             android:name="vector"
+            android:alpha=".7"
             android:width="100dp"
             android:height="100dp"
             android:viewportWidth="24"

@@ -6,6 +6,7 @@
             android:name="vector"
             android:width="100dp"
             android:height="100dp"
+            android:alpha=".7"
             android:viewportWidth="24"
             android:viewportHeight="24">
             <group
