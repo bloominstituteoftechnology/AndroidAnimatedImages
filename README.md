@@ -1,3 +1,5 @@
+Spencer Stock
+
 # Android Animated Images
 
 For this project you'll use at least 3 separate animated images use at least 1 of each kind. Allow the user to select and image or step through them and then start the animation. Be sure to use any extra time you have to experiment with shapeshifter.
