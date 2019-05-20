@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/gatsby_frame_02" android:duration="150"/>
+    <item android:drawable="@drawable/gatsby_frame_03" android:duration="150"/>
+    <item android:drawable="@drawable/gatsby_frame_04" android:duration="150"/>
+    <item android:drawable="@drawable/gatsby_frame_05" android:duration="150"/>
+    <item android:drawable="@drawable/gatsby_frame_06" android:duration="150"/>
+    <item android:drawable="@drawable/gatsby_frame_07" android:duration="150"/>
+    <item android:drawable="@drawable/gatsby_frame_08" android:duration="150"/>
+    <item android:drawable="@drawable/gatsby_frame_09" android:duration="150"/>
+    <item android:drawable="@drawable/gatsby_frame_10" android:duration="150"/>
+    <item android:drawable="@drawable/gatsby_frame_11" android:duration="150"/>
+    <item android:drawable="@drawable/gatsby_frame_12" android:duration="150"/>
+    <item android:drawable="@drawable/gatsby_frame_13" android:duration="150"/>
+    <item android:drawable="@drawable/gatsby_frame_14" android:duration="150"/>
+</animation-list>

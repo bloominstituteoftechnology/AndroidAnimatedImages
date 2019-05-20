@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/toaster_frame_00"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_01"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_02"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_03"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_04"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_05"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_06"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_07"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_08"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_09"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_10"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_11"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_12"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_13"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_14"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_15"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_16"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_17"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_18"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_19"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_20"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_21"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_22"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_23"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_24"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_25"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_26"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_27"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_28"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_29"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_30"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_31"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_32"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_33"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_34"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_35"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_36"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_37"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_38"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_39"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_40"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_41"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_42"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_43"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_44"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_45"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_46"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_47"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_48"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_49"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_50"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_51"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_52"
+        android:duration="30" />
+    <item
+        android:drawable="@drawable/toaster_frame_53"
+        android:duration="540" />
+</animation-list>
