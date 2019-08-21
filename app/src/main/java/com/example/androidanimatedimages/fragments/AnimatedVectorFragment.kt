@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat
 
 import kotlinx.android.synthetic.main.fragment_animated_vector.*
 import android.os.Handler
-
+import com.example.androidanimatedimages.R
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -53,24 +53,25 @@ class AnimatedVectorFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val ghostToSkull = ContextCompat.getDrawable(view.context, com.example.androidanimatedimages.R.drawable.avd_ghost_to_skull)
-        val skullToGhost = ContextCompat.getDrawable(view.context, com.example.androidanimatedimages.R.drawable.avd_skull_to_ghost)
-        iv_av.setImageDrawable(ghostToSkull)
+        val littleBig = ContextCompat.getDrawable(view.context, R.drawable.avd_little_big)
+        val bigLittle = ContextCompat.getDrawable(view.context, R.drawable.avd_big_little)
+        iv_av.setImageDrawable(bigLittle)
         var check = 0
         val handler = Handler()
         iv_av.setOnClickListener{
             if (check==0) {
-                (ghostToSkull as Animatable).start()
 
-                handler.postDelayed({iv_av.setImageDrawable(skullToGhost)}, 1000)
-
+                (bigLittle as Animatable).start()
+                //handler.postDelayed({)}, 1000)
+                iv_av.setImageDrawable(littleBig)
                 check++
 
             }
             else{
-                (skullToGhost as Animatable).start()
-                handler.postDelayed({iv_av.setImageDrawable(ghostToSkull)}, 1000)
 
+                (littleBig as Animatable).start()
+                //handler.postDelayed({}, 1000)
+                iv_av.setImageDrawable(bigLittle)
                 check=0
             }
 
