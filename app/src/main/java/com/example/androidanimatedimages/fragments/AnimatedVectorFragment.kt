@@ -10,8 +10,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 
-import com.example.androidanimatedimages.R
+
 import kotlinx.android.synthetic.main.fragment_animated_vector.*
+import android.os.CountDownTimer
+import android.os.Handler
+
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -45,14 +49,33 @@ class AnimatedVectorFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_animated_vector, container, false)
+        return inflater.inflate(com.example.androidanimatedimages.R.layout.fragment_animated_vector, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val animatedVectorDrawable = ContextCompat.getDrawable(view.context, R.drawable.avd_anim)
-        iv_av.setImageDrawable(animatedVectorDrawable)
-        (animatedVectorDrawable as Animatable).start()
+        val squareToBurst = ContextCompat.getDrawable(view.context, com.example.androidanimatedimages.R.drawable.avd_square_to_burst)
+        val burstToSquare = ContextCompat.getDrawable(view.context, com.example.androidanimatedimages.R.drawable.avd_burst_to_square)
+        iv_av.setImageDrawable(squareToBurst)
+        var check = 0
+        val handler = Handler()
+        iv_av.setOnClickListener{
+            if (check==0) {
+                (squareToBurst as Animatable).start()
+
+                handler.postDelayed({iv_av.setImageDrawable(burstToSquare)}, 2000)
+
+                check++
+
+            }
+            else{
+                (burstToSquare as Animatable).start()
+                handler.postDelayed({iv_av.setImageDrawable(squareToBurst)}, 2000)
+
+                check=0
+            }
+
+        }
     }
 
     // TODO: Rename method, update argument and hook method into UI event
