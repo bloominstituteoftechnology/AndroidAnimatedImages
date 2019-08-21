@@ -12,7 +12,6 @@ import androidx.core.content.ContextCompat
 
 
 import kotlinx.android.synthetic.main.fragment_animated_vector.*
-import android.os.CountDownTimer
 import android.os.Handler
 
 
@@ -54,23 +53,23 @@ class AnimatedVectorFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val squareToBurst = ContextCompat.getDrawable(view.context, com.example.androidanimatedimages.R.drawable.avd_square_to_burst)
-        val burstToSquare = ContextCompat.getDrawable(view.context, com.example.androidanimatedimages.R.drawable.avd_burst_to_square)
-        iv_av.setImageDrawable(squareToBurst)
+        val ghostToSkull = ContextCompat.getDrawable(view.context, com.example.androidanimatedimages.R.drawable.avd_ghost_to_skull)
+        val skullToGhost = ContextCompat.getDrawable(view.context, com.example.androidanimatedimages.R.drawable.avd_skull_to_ghost)
+        iv_av.setImageDrawable(ghostToSkull)
         var check = 0
         val handler = Handler()
         iv_av.setOnClickListener{
             if (check==0) {
-                (squareToBurst as Animatable).start()
+                (ghostToSkull as Animatable).start()
 
-                handler.postDelayed({iv_av.setImageDrawable(burstToSquare)}, 1000)
+                handler.postDelayed({iv_av.setImageDrawable(skullToGhost)}, 1000)
 
                 check++
 
             }
             else{
-                (burstToSquare as Animatable).start()
-                handler.postDelayed({iv_av.setImageDrawable(squareToBurst)}, 1000)
+                (skullToGhost as Animatable).start()
+                handler.postDelayed({iv_av.setImageDrawable(ghostToSkull)}, 1000)
 
                 check=0
             }
