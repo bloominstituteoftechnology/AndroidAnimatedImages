@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/monkey_00" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_01" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_02" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_03" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_04" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_05" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_06" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_07" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_08" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_09" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_10" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_11" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_12" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_13" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_14" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_15" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_16" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_17" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_18" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_19" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_20" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_21" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_22" android:duration="50"/>
+    <item android:drawable="@drawable/monkey_23" android:duration="50"/>
+
+
+
+</animation-list>
