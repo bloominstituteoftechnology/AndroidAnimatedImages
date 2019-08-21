@@ -1,14 +1,17 @@
 package com.example.androidanimatedimages.fragments
 
 import android.content.Context
+import android.graphics.drawable.AnimationDrawable
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 
 import com.example.androidanimatedimages.R
+import kotlinx.android.synthetic.main.fragment_animated_drawable.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -48,6 +51,14 @@ class AnimatedDrawableFragment : Fragment() {
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
         listener?.onFragmentInteraction(uri)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val frameDrawable = ContextCompat.getDrawable(view.context, R.drawable.menagerie)
+        iv_ad.setImageDrawable(frameDrawable)
+        (frameDrawable as AnimationDrawable).start()
     }
 
     override fun onAttach(context: Context) {
