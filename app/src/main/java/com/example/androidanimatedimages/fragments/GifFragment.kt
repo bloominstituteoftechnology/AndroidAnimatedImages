@@ -1,7 +1,10 @@
 package com.example.androidanimatedimages.fragments
 
 import android.content.Context
+import android.graphics.ImageDecoder
+import android.graphics.drawable.AnimatedImageDrawable
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.example.androidanimatedimages.R
+import kotlinx.android.synthetic.main.fragment_gif_display.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -43,6 +47,19 @@ class GifFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_gif_display, container, false)
+
+
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            val gifDrawable = ImageDecoder.decodeDrawable(ImageDecoder.createSource(resources, R.drawable.scorpionspin))
+            iv_gif.setImageDrawable(gifDrawable)
+            (gifDrawable as AnimatedImageDrawable).start()
+        }
     }
 
     // TODO: Rename method, update argument and hook method into UI event

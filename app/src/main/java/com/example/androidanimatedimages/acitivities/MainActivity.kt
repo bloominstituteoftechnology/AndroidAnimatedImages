@@ -1,5 +1,6 @@
 package com.example.androidanimatedimages.acitivities
 
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androidanimatedimages.R
@@ -7,7 +8,12 @@ import com.example.androidanimatedimages.fragments.AnimatedDrawableFragment
 import com.example.androidanimatedimages.fragments.AnimatedVectorFragment
 import com.example.androidanimatedimages.fragments.GifFragment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), AnimatedDrawableFragment.OnFragmentInteractionListener,
+    AnimatedVectorFragment.OnFragmentInteractionListener,
+    GifFragment.OnFragmentInteractionListener {
+    override fun onFragmentInteraction(uri: Uri) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     //i could probably make just one fragment that would determine which kind  of drawable is being passed to it, but we're gonna
     //do it this way

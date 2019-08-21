@@ -3,12 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.AnimatedDrawableFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="drawablefrag" />
+        android:id="@+id/clad">
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="drawablefrag"
+            android:id="@+id/tv_ad"
+            app:layout_constraintLeft_toLeftOf="@+id/clad"
+            app:layout_constraintTop_toTopOf="@+id/clad"/>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ad"
+        app:layout_constraintLeft_toLeftOf="@+id/clad"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
