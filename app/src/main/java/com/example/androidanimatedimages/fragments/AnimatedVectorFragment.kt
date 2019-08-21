@@ -63,14 +63,14 @@ class AnimatedVectorFragment : Fragment() {
             if (check==0) {
                 (squareToBurst as Animatable).start()
 
-                handler.postDelayed({iv_av.setImageDrawable(burstToSquare)}, 2000)
+                handler.postDelayed({iv_av.setImageDrawable(burstToSquare)}, 1000)
 
                 check++
 
             }
             else{
                 (burstToSquare as Animatable).start()
-                handler.postDelayed({iv_av.setImageDrawable(squareToBurst)}, 2000)
+                handler.postDelayed({iv_av.setImageDrawable(squareToBurst)}, 1000)
 
                 check=0
             }
