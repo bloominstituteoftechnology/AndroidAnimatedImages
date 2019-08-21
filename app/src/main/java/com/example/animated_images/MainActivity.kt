@@ -2,11 +2,14 @@ package com.example.animated_images
 
 import android.annotation.SuppressLint
 import android.graphics.ImageDecoder
+import android.graphics.drawable.Animatable
 import android.graphics.drawable.AnimatedImageDrawable
 import android.graphics.drawable.AnimationDrawable
+import android.media.Image
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -51,35 +54,42 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        button_play.setOnClickListener {
+        button_play.setOnClickListener {view ->
             when (pointer) {
-                0 -> {animateGif(drawableList[pointer])}
-                1-> {animateAnimationDrawable(drawableList[pointer])}
+                0 -> animateGif(drawableList[pointer], animated_image)
+                1-> animateAnimationDrawable(drawableList[pointer],animated_image)
 
             }
+            animateVectorDrawable(R.drawable.avd_anim,view as ImageView)
 
         }
 
 
-       // animateGif()
 
-      //  animateAnimationDrawable()
+
+    }
+    private fun animateVectorDrawable(id: Int, view: ImageView) {
+        val animatedVectorDrawable = ContextCompat.getDrawable(this, id)
+        view.setImageDrawable(animatedVectorDrawable)
+        (animatedVectorDrawable as Animatable).start()
 
     }
 
-    private fun animateAnimationDrawable(id: Int) {
+    private fun animateAnimationDrawable(id: Int,view: ImageView) {
         val monkeyDrawable = ContextCompat.getDrawable(this, id)
-        animated_image.setImageDrawable(monkeyDrawable)
+        view.setImageDrawable(monkeyDrawable)
         (monkeyDrawable as AnimationDrawable).start()
     }
 
-    private fun animateGif(id: Int) {
+    private fun animateGif(id: Int, view: ImageView) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             val angry_kid_drawable = ImageDecoder.decodeDrawable(ImageDecoder.createSource(resources,id))
 
-        animated_image.setImageDrawable(angry_kid_drawable)
+        view.setImageDrawable(angry_kid_drawable)
 
             (angry_kid_drawable as AnimatedImageDrawable).start()
+
+
 
 
         }
