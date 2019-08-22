@@ -53,8 +53,8 @@ class AnimatedVectorFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val littleBig = ContextCompat.getDrawable(view.context, R.drawable.avd_skull_to_ghost)
-        val bigLittle = ContextCompat.getDrawable(view.context, R.drawable.avd_ghost_to_skull)
+        val littleBig = ContextCompat.getDrawable(view.context, R.drawable.avd_skull2ghost)
+        val bigLittle = ContextCompat.getDrawable(view.context, R.drawable.avd_ghost2skull)
         iv_av.setImageDrawable(bigLittle)
         var check = 0
         val handler = Handler()
@@ -62,7 +62,7 @@ class AnimatedVectorFragment : Fragment() {
             if (check==0) {
 
                 (bigLittle as Animatable).start()
-                handler.postDelayed({iv_av.setImageDrawable(littleBig)}, 3000)
+                handler.postDelayed({iv_av.setImageDrawable(littleBig)}, 1000)
 
                 check++
 
@@ -70,7 +70,7 @@ class AnimatedVectorFragment : Fragment() {
             else{
 
                 (littleBig as Animatable).start()
-                handler.postDelayed({iv_av.setImageDrawable(bigLittle)}, 3000)
+                handler.postDelayed({iv_av.setImageDrawable(bigLittle)}, 1000)
 
                 check=0
             }

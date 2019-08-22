@@ -9,8 +9,8 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.androidanimatedimages"
-        minSdkVersion 29
-        targetSdkVersion 29
+        minSdkVersion 14
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
