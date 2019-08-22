@@ -58,6 +58,9 @@ class GifFragment : Fragment() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             val gifDrawable = ImageDecoder.decodeDrawable(ImageDecoder.createSource(resources, R.drawable.scorpionspin))
             iv_gif.setImageDrawable(gifDrawable)
+
+            //this looks awful
+            // clgif.setBackgroundResource(R.drawable.scorpionspin)
             (gifDrawable as AnimatedImageDrawable).start()
         }
     }

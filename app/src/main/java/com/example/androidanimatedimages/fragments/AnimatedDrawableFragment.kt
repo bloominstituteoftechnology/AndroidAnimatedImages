@@ -58,6 +58,7 @@ class AnimatedDrawableFragment : Fragment() {
 
         val frameDrawable = ContextCompat.getDrawable(view.context, R.drawable.menagerie)
         iv_ad.setImageDrawable(frameDrawable)
+        clad.setBackgroundResource(R.drawable.menagerie)
         (frameDrawable as AnimationDrawable).start()
     }
 
