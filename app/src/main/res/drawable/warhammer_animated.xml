@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list   xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/warhammer_frame01" android:duration="44"/>
+    <item android:drawable="@drawable/warhammer_frame02" android:duration="44"/>
+    <item android:drawable="@drawable/warhammer_frame03" android:duration="44"/>
+    <item android:drawable="@drawable/warhammer_frame04" android:duration="44"/>
+    <item android:drawable="@drawable/warhammer_frame05" android:duration="44"/>
+    <item android:drawable="@drawable/warhammer_frame06" android:duration="44"/>
+    <item android:drawable="@drawable/warhammer_frame07" android:duration="44"/>
+    <item android:drawable="@drawable/warhammer_frame08" android:duration="44"/>
+    <item android:drawable="@drawable/warhammer_frame09" android:duration="44"/>
+    <item android:drawable="@drawable/warhammer_frame10" android:duration="44"/>
+    <item android:drawable="@drawable/warhammer_frame11" android:duration="44"/>
+    <item android:drawable="@drawable/warhammer_frame12" android:duration="44"/>
+    <item android:drawable="@drawable/warhammer_frame13" android:duration="44"/>
+    <item android:drawable="@drawable/warhammer_frame14" android:duration="44"/>
+    <item android:drawable="@drawable/warhammer_frame15" android:duration="44"/>
+    <item android:drawable="@drawable/warhammer_frame16" android:duration="44"/>
+    <item android:drawable="@drawable/warhammer_frame17" android:duration="44"/>
+    <item android:drawable="@drawable/warhammer_frame18" android:duration="44"/>
+
+
+
+
+</animation-list>
