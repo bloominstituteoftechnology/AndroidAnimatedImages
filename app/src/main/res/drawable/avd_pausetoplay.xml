@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <?xml version="1.0"?>
 
-    -<vector android:viewportHeight="24" android:viewportWidth="24" android:height="24dp" android:width="24dp" android:name="vector" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <vector android:viewportHeight="24" android:viewportWidth="24" android:height="24dp" android:width="24dp" android:name="vector" xmlns:android="http://schemas.android.com/apk/res/android">
 
     <path android:name="pause" android:strokeWidth="1" android:fillColor="#000" android:pathData="M 6 19 L 10 19 L 10 5 L 6 5 L 6 19 Z M 14 5 L 14 19 L 18 19 L 18 5 L 14 5 Z"/>
 
